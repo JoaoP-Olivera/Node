@@ -14,10 +14,10 @@ app.get('/', (req,res)=>{
     res.render('index.pug');
 });
 app.get('/sobre', (req,res)=>{
-    res.render('about.pug');
+    res.render('sobre.pug');
 });
 app.get('/contato', (req,res)=>{
-    res.render('contact.pug');
+    res.render('contato.pug');
 });
 //Formulario com Node
 app.post('/contato/enviar', (req,res)=>{
@@ -43,14 +43,11 @@ app.post('/contato/enviar', (req,res)=>{
             console.log('Mensagem enviada'+info.response);
             console.log(mailoptions);
             res.redirect('/');
+            alert('Mensagem enviada com sucesso!');
         }
     })
 });
 
-//req.body é o $_POST[] do node.js
-
-//req.body.nome é igual ao $_POST['nome'] = $nome
-//req.body.email é igual a $_POST['email'] = $email
-//req.body.mensagem é igual $_POST['mensagem'] = $mensagem
-
-app.listen(8000);
+app.listen(8000 , ()=>{
+    console.log("Escutando em Localhost:8000");
+});

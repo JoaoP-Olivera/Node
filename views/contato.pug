@@ -1,0 +1,16 @@
+extends layout.pug
+
+block content
+ .container
+  form(method='post', action='contato/enviar')
+   h1 Contato
+   .form-group
+    label Nome
+    input.form-control(type='text', name='nome', placeholder='Enter Name')
+   .form-group
+    label Email
+    input.form-control(type='email', name='email', placeholder='Enter Email')
+   .form-group
+    label Menssage
+    textarea.form-control(name='menssage', placeholder='Enter Message')
+   button.btn.btn-default(type='submit') Enviar
